@@ -1,12 +1,9 @@
-# Ignore everything
-*
+/*
 
-# Except
-!.gitignore
-!.bashrc
-!.bash_profile
-!.ideavimrc
-!.aliases
-!.config
-!README.md
+!/.gitignore
 
+!/.config/
+/.config/*
+!/.config/nvim/
+!/.config/bash/
+!/.github/

@@ -181,3 +181,6 @@
 [init]
 
 	defaultBranch = main
+[user]
+	email = mail@maiboroda.com
+	name = Mayb
