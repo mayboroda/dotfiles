@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Except
+!.gitignore
+!.bashrc
+!.bash_profile
+!.ideavimrc
+!.aliases
+!.config
+!README.md
+
