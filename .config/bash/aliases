@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# .dotfiles
+alias mayb='git --git-dir="$HOME/.dotfiles"'
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# Shortcuts
+alias d="cd ~/Documents/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/projects"
+
+# use colorized output when listing files and don't show group
+if [[ $OSTYPE =~ darwin ]]; then
+  alias ls='ls -G';
+  alias ll='ls -lG';
+  alias la='ls -lGa';
+  alias lsd='ls -ldG */';
+else
+  alias ls='ls --color=auto';
+  alias ll='ls --color=auto -l';
+  alias la='ls --color=auto -la';
+  alias lsd='ls --color=auto -ld */';
+fi;
+
+# always ask for confirmation when removing files
+alias rm='rm -i';
+
+# always ask for confirmation when copying files
+alias cp='cp -i';
+
+# always colorise grep output
+alias grep='grep --color=auto';
+
+# nvim only
+alias vi='nvim';
+alias vim='nvim';
+
+# git 
+alias g="git";
+

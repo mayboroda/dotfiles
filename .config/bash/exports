@@ -1,0 +1,12 @@
+
+# 128 lines of history is enough
+export HISTSIZE=128
+export HISTFILESIZE=$HISTSIZE;
+# don't log duplicate commands and blank commands
+export HISTCONTROL=ignoreboth;
+# list of commands that should not be added to history
+export HISTIGNORE='ls:ll:la:exit:[bf]g';
+# add date and time to history
+export HISTTIMEFORMAT='%F %T '
+# Don't keep `less` history
+export LESSHISTFILE='-'

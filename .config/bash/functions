@@ -1,0 +1,33 @@
+# List of FZF functions
+
+# requires: [bat](https://github.com/sharkdp/bat)
+
+BAT_PREVIEW='bat --theme="Nord" --color=always --style=numbers --line-range=:500 {}'
+
+# Set colors
+# arcticicestudio/nord-vim
+export FZF_DEFAULT_OPTS='--color=bg+:#3B4252,bg:#2E3440,spinner:#81A1C1,hl:#616E88,fg:#D8DEE9,header:#616E88,info:#81A1C1,pointer:#81A1C1,marker:#81A1C1,fg+:#D8DEE9,prompt:#81A1C1,hl+:#81A1C1'
+
+## area:Kubernetes
+## description: quick ssh to pods with preview of the
+
+alias kssh="kubectl get pods -o=name | fzf --preview 'kubectl describe {}' --bind 'ctrl-d:preview:kubectl describe {}' --bind 'ctrl-l:preview:kubectl logs {}'  --preview-window=right:60%:wrap | xargs -I {} -o kubectl exec -it {} -- /bin/bash"
+
+FILES_IN_CURRENT_DIR='find . -type f -maxdepth 1'
+## Copy multiple files from this directory to destination
+## Example cpfm backup | where backup is a folder
+alias cpmf="$FILES_IN_CURRENT_DIR | fzf -m | xargs -I{} cp {}"
+
+## Remove file/folders in current folder
+alias rmf="ls -A | fzf -m --preview '$BAT_PREVIEW' | xargs -I{} rm -rf {}"
+
+## Copy file content
+alias lscopy="$FILES_IN_CURRENT_DIR | fzf --preview '$BAT_PREVIEW' | xargs -I{} cat {} | pbcopy"
+
+## Search and put history
+alias fh="history | fzf "
+
+
+# hgrep () { fc -lim "*$@*" 1 }
+
+alias vf='nvim $(fzf --height 40% --reverse)'
