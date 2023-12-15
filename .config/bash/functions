@@ -28,6 +28,12 @@ alias lscopy="$FILES_IN_CURRENT_DIR | fzf --preview '$BAT_PREVIEW' | xargs -I{} 
 alias fh="history | fzf "
 
 
-# hgrep () { fc -lim "*$@*" 1 }
-
 alias vf='nvim $(fzf --height 40% --reverse)'
+
+# Displays help pages of the apps using bat 
+# usage: help cp
+# usage: help man
+help() {
+  "$@" --help 2>&1 | bat --theme="Nord" --style=plain --language=help
+}
+

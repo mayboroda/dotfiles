@@ -1,0 +1,29 @@
+# nvm
+export NVM_DIR="$HOME/.nvm"
+if [[ -s "/usr/local/opt/nvm/nvm.sh" ]]
+  then
+    source "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+fi
+if [[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]]
+ then
+   source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+# sdkman
+export SDKMAN_DIR="/Users/dmytromay/.sdkman"
+if [[ -s "/Users/dmytromay/.sdkman/bin/sdkman-init.sh" ]]
+ then
+   source "/Users/dmytromay/.sdkman/bin/sdkman-init.sh"
+   # Update sdkman
+   # sdk update
+fi
+
+# rvm
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]
+  then
+    source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+export PATH="$PATH:$HOME/.rvm/bin"
+
+

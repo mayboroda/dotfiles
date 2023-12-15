@@ -10,3 +10,14 @@ export HISTIGNORE='ls:ll:la:exit:[bf]g';
 export HISTTIMEFORMAT='%F %T '
 # Don't keep `less` history
 export LESSHISTFILE='-'
+
+# Additional bins from brew
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="/usr/local/sbin:$PATH"
+
+# Wix 
+source "$HOME/.bazelenv"
+
+## Rancher desktop start 
+export PATH="/Users/dmytromay/.rd/bin:$PATH"
+
