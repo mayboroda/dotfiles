@@ -1,121 +1,167 @@
-"" Source your .vimrc
-" source ~/.vimrc
+" Plugins
+Plug 'nerdtree'
 
 let mapleader=" "
 
 set showmode
+" Display line numbers + relative mode
+set nu
+set rnu
+" Search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set visualbell
 
-" Allow to use system clipboard and vise verca
+set ruler
+
+" allow to use system clipboard and vise versa
 set clipboard+=unnamed
 set clipboard+=ideaput
 
-" Edit and Reload this file in intellij
+" set ideamarks
+
+" edit and reload this file in intellij
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
-"" -- Suggested options --
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+
+sethandler <c-r> a:vim
+nnoremap <c-r> :action RecentFiles<CR>
+
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
-" Don't use Ex mode, use Q for formatting.
+" Editor / Code
+
+"" Formatting
+""" Don't use Ex mode, use Q for formatting.
 map Q gq
 
-" Toggle DistractionFree mode
-nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+" Vim specific
+nnoremap <c-l> :noh<CR>
 
-""" Terminal
-nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
-" Create a new terminal session
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
-""" Navigation
-set NERDTree
-nnoremap <C-n> :NERDTree<CR>
-" set sneak " search like `f` or `F` but for multiple lines with `s` and `S` commands. `,` and `;` next - prev search result
-
-nnoremap <c-\> :action SplitVertically<CR>
-nnoremap <c--> :action SplitHorizontally<CR>
-nnoremap <c-=> :action Unsplit<CR>
-nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
-" Navigation between splits
-sethandler <c-j> a:vim
-sethandler <c-k> a:vim
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-" Navigation between tabs
-nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
-
-" ideajoin
-set ideajoin
-set idearefactormode=keep
-" TODO: not really sure what it's doing
-vnoremap < <gv
-vnoremap > >gv
-
-""" Navigation by Method
-nnoremap [[ :action MethodUp<CR>
-nnoremap ]] :action MethodDown<CR>
-
-nnoremap zc :action CollapseRegion<CR>
+" Fold/Unfold methods and classes
 nnoremap zo :action ExpandRegion<CR>
-nnoremap <leader>zc :action CollapseAllRegions<CR>
-nnoremap <leader>zo :action ExpandAllRegions<CR>
+nnoremap zO :action ExpandAllRegions<CR>
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zC :action CollapseAllRegions<CR>
 
-nnoremap <leader>c :action CommentByLineComment<CR>
-nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
-nnoremap <Leader>=  :action ReformatCode<CR>
-nnoremap <leader>o :action OptimizeImports<CR>
+"" Refactoring
+""" r - rename
+nnoremap <leader>r :action RenameElement<CR>
+""" e - extract
+"""     v - into variable
+"""     m - into method
+"""     c - into constant
+nnoremap <leader>ev :action IntroduceVariable<CR>
+vnoremap <leader>ev :action IntroduceVariable<CR>
+nnoremap <leader>em :action ExtractMethod<CR>
+vnoremap <leader>em :action ExtractMethod<CR>
+nnoremap <leader>ef :action ExtractFunction<CR>
+vnoremap <leader>ef :action ExtractFunction<CR>
 
-nnoremap <c-r> :action RecentFiles<CR>
-nnoremap <leader>l :action RecentLocations<CR>
-nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
+"use <c-i> instead of nnoremap [ :action Back<CR>
+"use <c-o> instead of nnoremap ] :action Forward<CR>
 
+"" Go To
+""" e - next error
+""" E - prev error
+""" d - method/class declaration
+""" i - interface/trait implementation
+""" t - test
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
-
-""" Searching and Source Code Navigation
-set ignorecase " search ignore case by default
-set smartcase " search using case if a upper-case letter is used
-set incsearch " search as you type
-set hlsearch " all search results are highlighted
-
-nnoremap <c-/> :action FindInPath<CR>
-nnoremap <c-a> :action GotoAction<CR>
-nnoremap <c-f> :action GotoFile<CR>
-nnoremap <leader>u :action FindUsages<CR>
-nnoremap <leader>s :action GotoRelated<CR>
-nnoremap <leader>h :action CallHierarchy<CR>
-nnoremap <leader>b :action ShowNavBar<CR>
-nnoremap <c-s> :action FileStructurePopup<CR>
-nnoremap <c-o> :action GotoSymbol<CR>
-nnoremap gc :action GotoClass<CR>
+nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gd :action GotToDeclaration<CR>
-nnoremap gp :action GotToSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
-nnoremap gb :action Back<CR>
-nnoremap gf :action Forward<CR>
+nnoremap gu :action GotoNextElementUnderCaretUsage<CR>
+nnoremap gU :action GotoPrevElementUnderCaretUsage<CR>
+"" Move between methods with Ctl pressed
+nnoremap gk :action MethodUp<CR>
+nnoremap gj :action MethodDown<CR>
 
-""" Tool windows
-nnoremap <c-p> :action JumpToLastWindow<CR>
-nnoremap <c-x> :action HideAllWindows<CR>
+"" Bookmarks
+""" b - bookmarks
+"""     s - set / unset
+"""     l - list bookmarks
+nnoremap <leader>bs :action ToggleBookmark<CR>
+nnoremap <leader>bl :action ShowBookmarks<CR>
 
-""" Running and Debugging
-nnoremap ,r :action ContextRun<CR>
-nnoremap ,c :action RunClass<CR>
-nnoremap ,f :action ChooseRunConfiguration<CR>
-nnoremap ,t :action ActivateRunToolWindow<CR>
-nnoremap ,u :action Rerun<CR>nnoremap ,f :action RerunFailedTests<CR>
-nnoremap ,b :action ToggleLineBreakpoint<CR>
-nnoremap ,d :action ContextDebug<CR>
-nnoremap ,n :action ActivateDebugToolWindow<CR>
+" UI Idea Views
+" --------------------------------------------
+"" Windows Splits
+""" to move between split use <c-w> + [hjkl]
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-s> :action MoveEditorToOppositeTabGroup<CR>
 
+"" Find / Searching pop-up
+nnoremap <leader>/ :action SearchEverywhere<CR>
+" nnoremap gf :action
+" Cmd + o
+nnoremap gc :action GotoClass<CR>
+" Cmd + a
+nnoremap ga :action GotoAction<CR>
 
-" VCS window and Git operations
-nnoremap <leader>s :action Vcs.Operations.Popup<CR>
-" Find more examples here: https://jb.gg/share-ideavimrc
+nnoremap gs :action GotToSuperMethod<CR>
+nnoremap gm :action FileStructurePopup<CR>
+
+"" Class Hierarchy View
+nnoremap <leader>ch :action FileStructurePopup<CR>
+"" Find View
+nnoremap <leader>fu :action FindUsages<CR>
+
+"" VCS Actions
+""" v - version control
+"""     n - new branch
+"""     b - list branches
+"""     a - annotate
+"""     r - rollback changes
+nnoremap <leader>v :action Vcs.QuickListPopupAction<CR>
+nnoremap <leader>vn :action GitNewBranchAction<CR>
+nnoremap <leader>vb :action Git.Branches<CR>
+nnoremap <leader>va :action Annotate<CR>
+nnoremap <leader>vr :action Vcs.RollbackChangedLines<CR>
+nnoremap <leader>vh :action Vcs.ShowTabbedFileHistory<CR>
+"" Pull Requests
+nnoremap <leader>vp :action ActivatePullRequestsToolWindow<CR>
+
+""" In diff window to go over next and prev diffs
+""" This doesn't work ok like F7 + Shift-F7
+nnoremap <A-k> :action PreviousDiff<CR>
+nnoremap <A-j> :action NextDiff<CR>
+
+"" Commit window
+""" Cmd + 0
+
+"" Open Project View
+""" [n]avigation [t]ree
+nnoremap <leader>n :action NERDTree<CR>
+nnoremap <leader>nt :action SelectInProjectView<CR>
+"" Toggle Project View
+"" Cmd + 1
+
+"" Toggle Terminal View
+""" Cmd + 8
+
+" Idea goodies
+" --------------------------------
+"" Toggle DistractionFree mode
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+"" Hide all windows
+nnoremap <leader>x :action HideAllWindows<CR>
+
+" Markdown org-md
+"" Create a link
+""" Markdown.Styling.CreateLink
+"" headers
+""" org.intellij.plugins.markdown.ui.actions.styling.HeaderDownAction
+""" org.intellij.plugins.markdown.ui.actions.styling.HeaderUpAction
 
