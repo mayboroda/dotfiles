@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 
-vim.opt.clipboard = "unnamedplus"
+-- Expolore directory: show files
+vim.keymap.set("n", "<leader>sf", ":Ex<CR>")
 
-vim.keymap.set("n", "<leader>nt", ":Ex<CR>")
+

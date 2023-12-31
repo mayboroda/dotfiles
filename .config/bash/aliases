@@ -42,6 +42,7 @@ alias grep='grep --color=auto';
 # nvim only
 alias vi='nvim';
 alias vim='nvim';
+alias v='nvim';
 
 # git 
 alias g="git";
