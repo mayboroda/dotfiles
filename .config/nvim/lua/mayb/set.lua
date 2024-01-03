@@ -23,7 +23,11 @@ local WindowScope = {
     expandtab = true,
     softtabstop = 4,
     shiftwidth = 4,
-
+    
+    -- Foldable with tree-sitter
+    foldmethod = "expr",
+    foldexpr = "nvim_treesitter#foldexpr()",
+    foldenable = false,
 }
 
 function ApplyWindowScopeOptions()
@@ -33,6 +37,7 @@ function ApplyWindowScopeOptions()
 end
 
 ApplyWindowScopeOptions()
+
 
 
 
