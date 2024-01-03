@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require("lazy").setup({
-	{ 'rose-pine/neovim', name = 'rose-pine' },
-	{ 'nvim-treesitter/nvim-treesitter' },
+    spec = LAZY_SPEC_PLUGINS,
+	-- { 'rose-pine/neovim', name = 'rose-pine' },
+	-- { 'nvim-treesitter/nvim-treesitter' },
 })

@@ -1,1 +1,2 @@
-require("mayb.plugins.treesitter")
+registerPlugin("mayb.plugins.colorscheme")
+registerPlugin("mayb.plugins.treesitter")
