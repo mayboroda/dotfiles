@@ -15,9 +15,40 @@ export LESSHISTFILE='-'
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="/usr/local/sbin:$PATH"
 
-# Wix 
-source "$HOME/.bazelenv"
 
-## Rancher desktop start 
-export PATH="/Users/dmytromay/.rd/bin:$PATH"
+# nvm
+export NVM_DIR="$HOME/.nvm"
+if [[ -s "/usr/local/opt/nvm/nvm.sh" ]]
+  then
+    source "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+fi
+if [[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]]
+ then
+   source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+if [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]]
+ then
+   source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+   # Update sdkman
+   # sdk update
+fi
+
+# rvm
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]
+  then
+    source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+# ruby
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# haskell
+if [[ -s "$HOME" ]]
+  then
+    source "$HOME/.ghcup/env"
+fi
+
 
