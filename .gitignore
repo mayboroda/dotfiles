@@ -6,5 +6,5 @@
 /.config/*
 !/.config/nvim/
 !/.config/bash/
-/.config/bash/extra
+.config/bash/extra
 !/.github/
