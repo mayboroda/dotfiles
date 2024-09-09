@@ -1,0 +1,9 @@
+# fzf integration to zsh
+source <(fzf --zsh)
+
+# To activate the autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# To activate the syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

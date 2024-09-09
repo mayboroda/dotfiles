@@ -17,7 +17,7 @@ alias p="cd ~/projects"
 # use colorized output when listing files and don't show group
 if [[ $OSTYPE =~ darwin ]]; then
   alias ls='ls -G';
-  alias ll='ls -lGh';
+  alias ll='ls -lG';
   alias la='ls -lGa';
   alias lsd='ls -ldG */';
 else
