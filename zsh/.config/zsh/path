@@ -1,3 +1,9 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+# GNU "awk"
+export PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"
+
+# GNU "sed"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH" 
+
