@@ -7,14 +7,15 @@ config = {
 	enable_tab_bar = false,
 	window_close_confirmation = "NeverPrompt",
 	window_decorations = "RESIZE",
-	color_scheme = "rose-pine",
+	color_scheme = "rose-pine-moon",
 	font_size = 19,
+    macos_window_background_blur = 30,
 	default_cursor_style = "BlinkingBlock",
 	window_padding = {
-		left = 3,
-		right = 3,
-		top = 0,
-		bottom = 0,
+		left = 5,
+		right = 5,
+		top = 5,
+		bottom = 5,
 	},
 }
 
