@@ -13,12 +13,14 @@ alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
+alias dots="cd ~/dotfiles"
+alias edots="nvim ~/dotfiles"
 
 # use colorized output when listing files and don't show group
 if [[ $OSTYPE =~ darwin ]]; then
   alias ls='ls -G';
   alias ll='ls -lG';
-  alias la='ls -lGa';
+  alias la='ls -lGah';
   alias lsd='ls -ldG */';
 else
   alias ls='ls --color=auto';
