@@ -8,6 +8,9 @@ config = {
 	window_close_confirmation = "NeverPrompt",
 	window_decorations = "RESIZE",
 	color_scheme = "rose-pine-moon",
+    colors = {
+        selection_bg = "#44415a",
+    },
 	font_size = 19,
     macos_window_background_blur = 30,
 	default_cursor_style = "BlinkingBlock",
