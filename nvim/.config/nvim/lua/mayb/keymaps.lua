@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
--- remove header text in directory explorer (:Ex)
-vim.g.netrw_banner = 0
-
 -- Expolore directory: show files
 vim.keymap.set("n", "<leader>sf", ":Ex<CR>")
 
@@ -20,6 +17,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- In terminal switch to a Normal mode
+vim.keymap.set("n", "<leader>t/", ":below vertical terminal<CR>")
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', { noremap = true, silent = true })
 
 
