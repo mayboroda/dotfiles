@@ -30,12 +30,19 @@ local Options = {
     
     updatetime = 100, -- faster completion (4000ms default) 
 
+
 }
 
 function ApplyAllOptions()
     for k,v in pairs(Options) do
 	    vim.api.nvim_set_option_value(k, v, {})
     end
+
+    -- netrw plugin for Explorer
+    vim.g.netrw_liststyle = 3
+    vim.g.netrw_sizestyle = 'h'
+    vim.g.netrw_banner = 0
+
 end
 
 ApplyAllOptions()
