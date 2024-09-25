@@ -7,11 +7,11 @@ local Options = {
 
     clipboard = "unnamedplus",
 
-    -- Use 4 spaces instead of a Tab
-    tabstop = 4,
+    -- Use 2 spaces instead of a Tab
+    tabstop = 2,
     expandtab = true,
-    softtabstop = 4,
-    shiftwidth = 4,
+    softtabstop = 2,
+    shiftwidth = 2,
     
     -- Foldable with tree-sitter
     foldmethod = "expr",
@@ -30,6 +30,9 @@ local Options = {
     
     updatetime = 100, -- faster completion (4000ms default) 
 
+    -- :help windows-resize
+    equalalways = false, -- window splits are not equals by default
+
 
 }
 
@@ -39,9 +42,11 @@ function ApplyAllOptions()
     end
 
     -- netrw plugin for Explorer
-    vim.g.netrw_liststyle = 3
-    vim.g.netrw_sizestyle = 'h'
+    vim.g.netrw_liststyle = 3 -- tree style listing
+    vim.g.netrw_sizestyle = 'H' -- human-readable (ex. 5K, 4M, 3G)
     vim.g.netrw_banner = 0
+    vim.g.netrw_hide = 0 -- show hidden files
+    vim.g.netrw_winsize = 80 -- initial size of the new Ex window in percentage
 
 end
 
