@@ -4,6 +4,8 @@ brew install gpg
 brew install gawk
 brew install cmake
 brew install fzf
+brew install fd
+brew install ripgrep
 brew install gnu-sed
 brew install htop
 brew install bat
@@ -11,7 +13,6 @@ brew install jq
 brew install kubectx
 brew install neovim
 brew install nmap
-brew install ripgrep
 brew install rust
 brew install shellcheck
 brew install stow

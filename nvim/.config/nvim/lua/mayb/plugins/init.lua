@@ -11,6 +11,7 @@ end
 -- List of all plugins
 registerPlugin("mayb.plugins.colorscheme")
 registerPlugin("mayb.plugins.treesitter")
+registerPlugin("mayb.plugins.telescope")
 registerPlugin("mayb.plugins.lsp")
 
 return LAZY_SPEC_PLUGINS
