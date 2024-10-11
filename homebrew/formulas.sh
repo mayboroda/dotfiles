@@ -25,4 +25,5 @@ brew install brew-cask-completion
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 brew install asdf
+brew install luarocks
 
