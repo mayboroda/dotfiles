@@ -12,7 +12,7 @@ local Options = {
     expandtab = true,
     softtabstop = 2,
     shiftwidth = 2,
-    
+
     -- Foldable with tree-sitter
     foldmethod = "expr",
     foldexpr = "nvim_treesitter#foldexpr()",
@@ -27,7 +27,6 @@ local Options = {
     swapfile = false, -- creates a swapfile
 
     termguicolors = true, -- set term gui colors (most terminals support this)
-    
     updatetime = 100, -- faster completion (4000ms default) 
 
     -- :help windows-resize

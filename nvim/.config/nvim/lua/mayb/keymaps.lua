@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 -- Expolore directory: show files
-vim.keymap.set("n", "<leader>sf", ":Ex<CR>")
+vim.keymap.set("n", "<leader>sf", ":Oil<CR>")
 
 -- in case you select text and paste on top your copy-buffer will remain
 vim.keymap.set("x", "p", [["_dP]])
