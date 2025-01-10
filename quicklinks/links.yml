@@ -1,0 +1,16 @@
+- key: backlog
+  link: https://wix.atlassian.net/jira/software/c/projects/DXR/boards/960/backlog?customFilter=17741&epics=visible
+- key: devportal
+  link: https://wix-bo.com/dev
+- key: prs
+  link: https://github.com/wix-private/wix-ci/labels/devex-prod
+- key: ai
+  link: https://claude.ai/chat/
+- key: judgement doc
+  link: https://github.com/wix-private/wix-ci/blob/master/cd/docs/integration/actions/judgement/standard-prometheus-metrics.md
+- key: product bulk rollout
+  link: https://docs.google.com/document/d/16DBUooMJhIDrA-s-68iQevcHiqHCj2lpTZg8sbk1Fow/edit?tab=t.0#heading=h.fq4w4e3rn1ap
+- key: devportal requirements for API
+  link: https://docs.google.com/document/d/1B41QJpuX_-1mKgdcmNMmfO6ILYOxl-kV65eGd2ar3PY/edit?tab=t.0
+- key: with Paulo
+  link: https://docs.google.com/document/d/1eD70Uizm-GuBG07oPbtScnjoE0V0KExSfiudsZB6iNA/edit?tab=t.0#heading=h.7879aui5ee0y

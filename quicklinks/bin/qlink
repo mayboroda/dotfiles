@@ -1,0 +1,5 @@
+#!/bin/zsh
+# Fzf for a key and opens up a link in the browser
+LINKS_PATH="/Users/dmytromay/dotfiles/quicklinks/links.yml"
+cat $LINKS_PATH
+yq '.[] | .key' "$LINKS_PATH" | fzf | xargs -I {} yq '.[] | select(.key == "{}") | .link' $LINKS_PATH | xargs open
