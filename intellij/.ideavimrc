@@ -7,6 +7,7 @@ set showmode
 " Display line numbers + relative mode
 set nu
 set rnu
+
 " Search
 set hlsearch
 set incsearch
@@ -20,22 +21,41 @@ set ruler
 set clipboard+=unnamed
 set clipboard+=ideaput
 
+" Enable which-key if you use it
+set which-key
+set notimeout
 " set ideamarks
+
+set foldenable
+set foldmethod=syntax
+
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
 
 " edit and reload this file in intellij
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
+" Vim specific
+" Clear highlights
+nnoremap <c-l> :noh<CR>
 
-nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
+""" InteliJ Mapping
+
+" UI features
+
+" Toggle Status ViewStatusBar
+nnoremap <leader>ts :action ViewStatusBar<CR>
+" Toggle Compact Mode
+nnoremap <leader>tc :action ToggleCompactMode<CR>
+"" Toggle DistractionFree mode
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+"" Hide all windows
+nnoremap <leader>x :action HideAllWindows<CR>
 
 sethandler <c-r> a:vim
 nnoremap <c-r> :action RecentFiles<CR>
-
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
 
 " Editor / Code
 
@@ -43,29 +63,53 @@ set scrolloff=5
 """ Don't use Ex mode, use Q for formatting.
 map Q gq
 
-" Vim specific
-nnoremap <c-l> :noh<CR>
-
-
 " Fold/Unfold methods and classes
+"nnoremap za :action ExpandCollapseToggle<CR>
 nnoremap zo :action ExpandRegion<CR>
-nnoremap zO :action ExpandAllRegions<CR>
 nnoremap zc :action CollapseRegion<CR>
-nnoremap zC :action CollapseAllRegions<CR>
+nnoremap zR :action ExpandAllRegions<CR>
+nnoremap zM :action CollapseAllRegions<CR>
+"nnoremap zj :action NextFoldingSection<CR>
+"nnoremap zk :action PreviousFoldingSection<CR>
+
+" LSP bindings
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
+nnoremap gr :action FindUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap K :action QuickJavaDoc<CR>
+sethandler <c-k> a:vim
+inoremap <C-k> :action ParameterInfo<CR>
+sethandler <c-p> a:vim
+nnoremap <C-p> :action ParameterInfo<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+nnoremap <leader>q :action ActivateProblemsViewToolWindow<CR>
 
 "" Refactoring
-""" r - rename
-nnoremap <leader>r :action RenameElement<CR>
 """ e - extract
 """     v - into variable
 """     m - into method
 """     c - into constant
+"""     p - into parameter
 nnoremap <leader>ev :action IntroduceVariable<CR>
 vnoremap <leader>ev :action IntroduceVariable<CR>
 nnoremap <leader>em :action ExtractMethod<CR>
 vnoremap <leader>em :action ExtractMethod<CR>
 nnoremap <leader>ef :action ExtractFunction<CR>
 vnoremap <leader>ef :action ExtractFunction<CR>
+nnoremap <leader>ep :action IntroduceParameter<CR>
+vnoremap <leader>ep :action IntroduceParameter<CR>
+
+" nnoremap gf :action
+" Cmd + o
+nnoremap gc :action GotoClass<CR>
+" Cmd + a
+nnoremap ga :action GotoAction<CR>
+nnoremap gs :action GotToSuperMethod<CR>
+nnoremap gm :action FileStructurePopup<CR>
 
 "use <c-i> instead of nnoremap [ :action Back<CR>
 "use <c-o> instead of nnoremap ] :action Forward<CR>
@@ -76,47 +120,31 @@ vnoremap <leader>ef :action ExtractFunction<CR>
 """ d - method/class declaration
 """ i - interface/trait implementation
 """ t - test
-nnoremap ge :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
-nnoremap gd :action GotoDeclaration<CR>
-nnoremap gi :action GotoImplementation<CR>
 nnoremap gt :action GotoTest<CR>
 nnoremap gu :action GotoNextElementUnderCaretUsage<CR>
 nnoremap gU :action GotoPrevElementUnderCaretUsage<CR>
+nnoremap gb :action Blaze.OpenCorrespondingBuildFile<CR>
 "" Move between methods with Ctl pressed
 nnoremap gk :action MethodUp<CR>
 nnoremap gj :action MethodDown<CR>
 
-"" Bookmarks
-""" b - bookmarks
-"""     s - set / unset
-"""     l - list bookmarks
-nnoremap <leader>bs :action ToggleBookmark<CR>
-nnoremap <leader>bl :action ShowBookmarks<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fg :action FindInPath<CR>
+nnoremap <leader>fb :action Switcher<CR>
+nnoremap <leader>sf :action SelectInProjectView<CR>
 
-" UI Idea Views
-" --------------------------------------------
 "" Windows Splits
 """ to move between split use <c-w> + [hjkl]
-nnoremap <c-\> :action SplitVertically<CR>
-nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <C-h> :action PreviousTab<CR>
+nnoremap <C-l> :action NextTab<CR>
+nnoremap <C-=> :action Unsplit<CR>
+nnoremap <C-\> :action SplitVertically<CR>
+nnoremap <C--> :action SplitHorizontally<CR>
+"" <c-[s]> - swap
 nnoremap <c-s> :action MoveEditorToOppositeTabGroup<CR>
 
 "" Find / Searching pop-up
-nnoremap <leader>/ :action SearchEverywhere<CR>
-" nnoremap gf :action
-" Cmd + o
-nnoremap gc :action GotoClass<CR>
-" Cmd + a
-nnoremap ga :action GotoAction<CR>
-
-nnoremap gs :action GotToSuperMethod<CR>
-nnoremap gm :action FileStructurePopup<CR>
-
-"" Class Hierarchy View
-nnoremap <leader>ch :action FileStructurePopup<CR>
-"" Find View
-nnoremap <leader>fu :action FindUsages<CR>
+nnoremap <leader>sa :action SearchEverywhere<CR>
 
 "" VCS Actions
 """ v - version control
@@ -141,22 +169,11 @@ nnoremap <A-j> :action NextDiff<CR>
 "" Commit window
 """ Cmd + 0
 
-"" Open Project View
-""" [n]avigation [t]ree
-nnoremap <leader>n :action NERDTree<CR>
-nnoremap <leader>nt :action SelectInProjectView<CR>
 "" Toggle Project View
 "" Cmd + 1
 
 "" Toggle Terminal View
 """ Cmd + 8
-
-" Idea goodies
-" --------------------------------
-"" Toggle DistractionFree mode
-nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
-"" Hide all windows
-nnoremap <leader>x :action HideAllWindows<CR>
 
 " Markdown org-md
 "" Create a link
@@ -164,4 +181,3 @@ nnoremap <leader>x :action HideAllWindows<CR>
 "" headers
 """ org.intellij.plugins.markdown.ui.actions.styling.HeaderDownAction
 """ org.intellij.plugins.markdown.ui.actions.styling.HeaderUpAction
-
