@@ -15,7 +15,13 @@ return {
     },
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      require("lspconfig").lua_ls.setup { capabilites = capabilities }
+      -- Lua
+      require('lspconfig').lua_ls.setup { capabilites = capabilities }
+      -- Racket
+      require('lspconfig').racket_langserver.setup { capabilites = capabilities }
+      -- Clang
+      require('lspconfig').clangd.setup {}
+
     end
   }
 }
