@@ -1,9 +1,6 @@
 *.tmp
 */.config/*/extra
+*/.config/*/thelast
 .DS_Store
 raycast
-
-emacs/.config/emacs/auto-save-list
-emacs/.config/emacs/elpa
-emacs/.config/emacs/transient
 
