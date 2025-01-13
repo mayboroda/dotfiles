@@ -12,6 +12,7 @@ alias -- -="cd -"
 alias d="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
+alias tmp="cd ~/tmp"
 alias dots="cd ~/dotfiles"
 alias edots="nvim ~/dotfiles"
 
