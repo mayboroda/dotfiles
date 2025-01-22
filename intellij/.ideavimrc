@@ -88,6 +88,9 @@ nnoremap [d :action GotoPreviousError<CR>
 nnoremap ]d :action GotoNextError<CR>
 nnoremap <leader>q :action ActivateProblemsViewToolWindow<CR>
 
+" LSP Scala
+nnoremap <leader>si :action Scala.ShowImplicits<CR>
+
 "" Refactoring
 """ e - extract
 """     v - into variable
