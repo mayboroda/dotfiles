@@ -21,6 +21,10 @@ return {
       require('lspconfig').racket_langserver.setup { capabilites = capabilities }
       -- Clang
       require('lspconfig').clangd.setup {}
+      -- Bash
+      require'lspconfig'.bashls.setup {}
+      -- Deno
+      require'lspconfig'.denols.setup {}
 
     end
   }
