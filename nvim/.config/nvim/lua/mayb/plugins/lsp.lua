@@ -22,9 +22,9 @@ return {
       -- Clang
       require('lspconfig').clangd.setup {}
       -- Bash
-      require'lspconfig'.bashls.setup {}
+      require('lspconfig').bashls.setup {}
       -- Deno
-      require'lspconfig'.denols.setup {}
+      require('lspconfig').denols.setup {}
 
     end
   }

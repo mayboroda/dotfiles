@@ -17,5 +17,8 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- In terminal switch to a Normal mode
-vim.keymap.set("n", "<leader>t/", ":below vertical terminal<CR>", { desc = "Terminal vertical split" })
+vim.keymap.set("n", "<leader>t/", function()
+  vim.cmd("below terminal")
+  vim.cmd("setlocal nonumber norelativenumber")
+end, { desc = "Terminal vertical split" })
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', { noremap = true, silent = true })
