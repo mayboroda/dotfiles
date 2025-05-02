@@ -1,0 +1,38 @@
+# NOTEBOOK SETTINGS
+[notebook]
+dir = "~/notes"
+
+# NOTE SETTINGS
+[note]
+
+# Language used when writing notes.
+# This is used to generate slugs or with date formats.
+language = "en"
+
+# EXTRA VARIABLES
+[extra]
+author = "D.Mayb"
+
+# MARKDOWN SETTINGS
+[format.markdown]
+# Enable support for #hashtags
+hashtags = true
+# Enable support for :colon:separated:tags:
+colon-tags = true
+
+# EXTERNAL TOOLS
+[tool]
+
+# Default editor used to open notes.
+editor = "nvim"
+
+
+# COMMAND ALIASES
+[alias]
+
+# Edit the last modified note.
+edi = "zk edit --interactive"
+
+# Edit the last modified note.
+edlast = "zk edit --limit 1 --sort modified- $@"
+
