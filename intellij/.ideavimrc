@@ -108,10 +108,10 @@ vnoremap <leader>ep :action IntroduceParameter<CR>
 
 " nnoremap gf :action
 " Cmd + o
-nnoremap gc :action GotoClass<CR>
+" nnoremap gc :action GotoClass<CR>
 " Cmd + a
-nnoremap ga :action GotoAction<CR>
-nnoremap gs :action GotToSuperMethod<CR>
+"nnoremap ga :action GotoAction<CR>
+"nnoremap gs :action GotToSuperMethod<CR>
 nnoremap gm :action FileStructurePopup<CR>
 
 "use <c-i> instead of nnoremap [ :action Back<CR>
@@ -127,6 +127,13 @@ nnoremap gt :action GotoTest<CR>
 nnoremap gu :action GotoNextElementUnderCaretUsage<CR>
 nnoremap gU :action GotoPrevElementUnderCaretUsage<CR>
 nnoremap gb :action Blaze.OpenCorrespondingBuildFile<CR>
+" gc - Go to Class declaration
+nnoremap gc gg/class<CR>:noh<CR>
+nnoremap <leader>rr :action Rerun<CR>
+
+"" Bazel 
+nnoremap <leader>bs :action Blaze.PartialSync<CR>
+
 "" Move between methods with Ctl pressed
 nnoremap gk :action MethodUp<CR>
 nnoremap gj :action MethodDown<CR>

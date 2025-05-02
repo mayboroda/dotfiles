@@ -13,3 +13,7 @@ unset file;
 # Case-insensitive globbing (used in pathname expansion)   
 setopt nocaseglob;
 
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/dmytromay/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

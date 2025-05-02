@@ -27,6 +27,9 @@
   # Preview and delete multiple local branches
   dlocal = !git branch | fzf --multi | xargs git branch -D
 
+  # Creates a local branch named `review-[branch-name]` that tracks the remote branch
+  review = "!f() { git fetch origin $1:review-$1 && git checkout review-$1; }; f"
+
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch --all
