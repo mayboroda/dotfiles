@@ -4,6 +4,7 @@ dir = "~/notes"
 
 # NOTE SETTINGS
 [note]
+filename = "{{id}}-{{slug title}}"
 
 # Language used when writing notes.
 # This is used to generate slugs or with date formats.
@@ -35,4 +36,14 @@ edi = "zk edit --interactive"
 
 # Edit the last modified note.
 edlast = "zk edit --limit 1 --sort modified- $@"
+
+# Add a new book
+newbook = "zk new books --group book --title $1 --extra author=$2,link=$3"
+
+[group.book]
+paths = [ "books" ]
+
+[group.book.note]
+filename = "{{id}}-{{slug title}}"
+template = "book.md"
 
