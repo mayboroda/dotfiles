@@ -130,6 +130,7 @@ nnoremap gb :action Blaze.OpenCorrespondingBuildFile<CR>
 " gc - Go to Class declaration
 nnoremap gc gg/class<CR>:noh<CR>
 nnoremap <leader>rr :action Rerun<CR>
+nnoremap <leader>gs :action Unscramble<CR>
 
 "" Bazel 
 nnoremap <leader>bs :action Blaze.PartialSync<CR>
