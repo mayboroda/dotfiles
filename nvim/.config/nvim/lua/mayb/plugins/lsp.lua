@@ -25,7 +25,8 @@ return {
       require('lspconfig').bashls.setup { capabilites = capabilities }
       -- Deno
       require('lspconfig').denols.setup { capabilites = capabilities }
-
+      -- Golang
+      require('lspconfig').golangci_lint_ls.setup { capabilites = capabilities }
     end
   }
 }
