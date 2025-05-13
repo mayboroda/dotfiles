@@ -1,4 +1,4 @@
-return { 
+return {
   {
     "folke/tokyonight.nvim",
     config = function()
@@ -16,7 +16,7 @@ return {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function()
-        -- VimCmd('colorscheme rose-pine-moon')
+      -- VimCmd('colorscheme rose-pine-moon')
     end
-}
+  }
 }
