@@ -6,7 +6,6 @@ return {
         picker = 'telescope',
       })
       local commands = require("zk.commands")
-      print(commands)
       vim.keymap.set('n', '<leader>zn', commands.get('ZkNotes'), { desc = 'Zk notes' })
       vim.keymap.set('n', '<leader>zt', commands.get('ZkTags'), { desc = 'Zk tags' })
       vim.keymap.set('n', '<leader>zb', commands.get('ZkBuffers'), { desc = 'Zk buffers' })
