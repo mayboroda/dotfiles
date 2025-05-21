@@ -32,7 +32,9 @@ local Options = {
     -- :help windows-resize
     equalalways = false, -- window splits are not equals by default
 
-
+    -- local configs
+    exrc = true, -- Enable loading of local .nvimrc, .exrc, or .nvim.lua files
+    secure = true, -- Restrict usage of some commands in local config files
 }
 
 function ApplyAllOptions()
