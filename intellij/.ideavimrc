@@ -132,6 +132,9 @@ nnoremap gc gg/class<CR>:noh<CR>
 nnoremap <leader>rr :action Rerun<CR>
 nnoremap <leader>gs :action Unscramble<CR>
 
+nnoremap <leader>ch :noh<CR>
+
+
 "" Bazel 
 nnoremap <leader>bs :action Blaze.PartialSync<CR>
 
