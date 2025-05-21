@@ -1,6 +1,8 @@
 # asdf is a tool version manager, more [here](https://asdf-vm.com/guide/introduction.html)
-# TODO: refactor all sources to have dynamic ref "$(brew --prefix asdf)/libexec/asdf.sh"
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
+source $(brew --prefix asdf)/libexec/asdf.sh
+
+# local bins
+export PATH="$HOME/.local/bin:$PATH"
 
 # fzf integration to zsh
 source <(fzf --zsh)
