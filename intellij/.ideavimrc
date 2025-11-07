@@ -137,6 +137,7 @@ nnoremap <leader>ch :noh<CR>
 
 "" Bazel 
 nnoremap <leader>bs :action Blaze.PartialSync<CR>
+nnoremap <leader>bc :action Blaze.CopyBlazeTargetPathAction<CR>
 
 "" Move between methods with Ctl pressed
 nnoremap gk :action MethodUp<CR>

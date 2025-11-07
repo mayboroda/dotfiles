@@ -27,6 +27,12 @@ return {
       require('lspconfig').denols.setup { capabilites = capabilities }
       -- Golang
       require('lspconfig').golangci_lint_ls.setup { capabilites = capabilities }
+      -- Scala
+      require('lspconfig').metals.setup {
+        filetypes = { "scala", "sbt", "sc", "mill" }
+      }
+      -- Swift
+      require('lspconfig').sourcekit.setup { capabilites = capabilities }
     end
   }
 }
