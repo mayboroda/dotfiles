@@ -33,6 +33,21 @@ return {
       }
       -- Swift
       require('lspconfig').sourcekit.setup { capabilites = capabilities }
+      -- Rust
+      require('lspconfig').rust_analyzer.setup {
+        capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+            },
+            checkOnSave = true,
+            check = {
+              command = "clippy", -- run `cargo clippy` instead of plain `check`
+            },
+          },
+        },
+      }
     end
   }
 }
