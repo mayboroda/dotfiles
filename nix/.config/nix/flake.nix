@@ -18,6 +18,7 @@
       user = "dmytromay";
       system = "aarch64-darwin";
   in {
+      #   error: flake 'git+file:///Users/dmytromay/dotfiles?dir=nix/.config/nix' does not provide attribute 'packages.aarch64-darwin.default' or 'defaultPackage.aarch64-darwin'
     darwinConfigurations.wix = darwin.lib.darwinSystem {
       inherit system;
 
@@ -41,6 +42,8 @@
           # Your user configuration
           home-manager.users."${user}" = { pkgs, ... }: {
             home.stateVersion = "25.05";
+            # 
+            home.homeDirectory = "/Users/dmytromay";
             # CLI tools you want
             home.packages = with pkgs; [
               jq
