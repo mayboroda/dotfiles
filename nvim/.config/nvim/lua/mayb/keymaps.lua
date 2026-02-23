@@ -26,3 +26,8 @@ vim.keymap.set("n", "<leader>t/", function()
   vim.cmd("setlocal nonumber norelativenumber")
 end, { desc = "Terminal vertical split" })
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', { noremap = true, silent = true })
+
+-- LSP
+vim.keymap.set({ "n", "i" }, "<S-CR>", function()
+  vim.diagnostic.open_float()
+end, { desc = "Open diagnostics float" })

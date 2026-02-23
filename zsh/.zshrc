@@ -1,4 +1,4 @@
-source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+# source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 # Setup brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
