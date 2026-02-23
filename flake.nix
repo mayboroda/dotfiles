@@ -7,16 +7,22 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin }:
-  let
-    system = "aarch64-darwin";
-  in
-  {
-    darwinConfigurations.YOUR_HOSTNAME = nix-darwin.lib.darwinSystem {
-      inherit system;
-      modules = [
-        ./darwin/configuration.nix
-      ];
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nix-darwin,
+    }:
+    let
+      system = "aarch64-darwin";
+      hostname = "mayb";
+    in
+    {
+      darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
+        inherit system;
+        modules = [
+          ./darwin/configuration.nix
+        ];
+      };
     };
-  };
 }

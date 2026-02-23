@@ -4,3 +4,6 @@
 .DS_Store
 raycast
 
+# nix build result
+result
+
