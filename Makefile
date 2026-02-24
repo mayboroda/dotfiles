@@ -1,5 +1,5 @@
 HOST=mayb
-FLAKE=.#$(HOST)
+FLAKE=.\#$(HOST)
 
 build-mac:
 	nix build .#darwinConfigurations.$(HOST).system	
