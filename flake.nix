@@ -20,14 +20,10 @@
     {
       darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
         inherit system;
+        specialArgs = { home-manager = inputs.home-manager; };
         modules = [
           ./darwin/configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            # home-manager.users.jdoe = ./home.nix;
-          }
+          ./darwin/home.nix
         ];
       };
     };

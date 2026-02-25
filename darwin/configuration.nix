@@ -4,6 +4,9 @@
   # Required
   system.stateVersion = 4;
   system.primaryUser = "dmytromay";
+  users.users.dmytromay = {
+    home = "/Users/dmytromay";
+  };
 
   # Verify the actual GID
   # dscl . -read /Groups/nixbld PrimaryGroupID
