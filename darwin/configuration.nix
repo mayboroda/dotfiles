@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
-
-{
+let 
+  username = "dmytromay"; 
+in {
   # Required
   system.stateVersion = 4;
   system.primaryUser = "dmytromay";
@@ -16,11 +17,16 @@
   nixpkgs.config.allowUnfree = true;
 
   # Basic system packages (safe test set)
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    curl
-  ];
+  environment = {
+    variables = {
+      EDITOR = "nvim";
+    };
+    systemPackages = with pkgs; [
+      git
+      vim
+      curl
+    ];
+  };
 
   # Enable Zsh integration
   programs.zsh.enable = true;

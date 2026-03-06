@@ -12,6 +12,10 @@
     home.homeDirectory = "/Users/dmytromay";
     home.stateVersion = "25.11";
 
+    programs.mise = {
+      enable = true;
+    };
+
     programs.zsh = {
       enable = true;
       initExtra = ''
