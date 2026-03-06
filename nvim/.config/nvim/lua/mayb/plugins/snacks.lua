@@ -2,6 +2,14 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
+  keys = {
+    { "<leader>tt", function() Snacks.picker() end, desc = "Snacks picker menu" },
+    { "<leader>ff", function() Snacks.picker.files() end, desc = "Snacks find files" },
+    { "<leader>fg", function() Snacks.picker.grep() end, desc = "Snacks live grep" },
+    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Snacks buffers" },
+    { "<leader>fh", function() Snacks.picker.help() end, desc = "Snacks help tags" },
+    { "<leader>th", function() Snacks.picker.colorschemes() end, desc = "Select theme with preview" },
+  },
   opts = {
     picker = {
       enabled = true,
@@ -14,6 +22,6 @@ return {
         list  = { border = "none" },
         preview = { border = "none" },
       },
-    }
+    },
   }
 }
