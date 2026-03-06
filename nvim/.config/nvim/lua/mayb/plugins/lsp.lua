@@ -71,7 +71,17 @@ return {
       -- Bash
       lspconfig.bashls.setup { capabilites = capabilities }
       -- Deno
-      lspconfig.denols.setup { capabilites = capabilities }
+      lspconfig.denols.setup {
+        capabilites = capabilities,
+        root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+      }
+      -- Typescript 
+      lspconfig.ts_ls.setup {
+        capabilites = capabilities,
+        root_dir = util.root_pattern("package.json"),
+        single_file_support = false,
+      }
+
       -- Golang
       lspconfig.golangci_lint_ls.setup { capabilites = capabilities }
 
