@@ -35,6 +35,18 @@ local Options = {
     -- local configs
     exrc = true, -- Enable loading of local .nvimrc, .exrc, or .nvim.lua files
     secure = true, -- Restrict usage of some commands in local config files
+    -- Custom status line
+    statusline =table.concat({
+      '[%n]',        -- buffer number
+      ' %f',         -- file path (relative); to truncate filename: `%<%f`
+      ' %m',         -- [+] if modified
+      ' %r',         -- [RO] if read-only
+
+      '%=',          -- split: left | right
+
+      ' %l:%c',      -- line:column
+      ' %P',         -- percentage through file (Top / 45% / Bot)
+    }),
 }
 
 function ApplyAllOptions()

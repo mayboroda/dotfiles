@@ -154,6 +154,11 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+  tool = nvimdiff
+[mergetool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$BASE" "$REMOTE"
+    trustExitCode = true
+    prompt = false
 
 [push]
 
