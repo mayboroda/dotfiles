@@ -1,3 +1,4 @@
-require("plugins.nvim")
-require("plugins.oil")
-require("plugins.colors")
+require('plugins.nvim')
+require('plugins.oil')
+require('plugins.colors')
+require('plugins.whichkey')

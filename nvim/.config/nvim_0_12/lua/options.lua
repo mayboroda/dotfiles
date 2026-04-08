@@ -4,7 +4,7 @@ local Options = {
     number = true,
     relativenumber = true,
 
-    clipboard = "unnamedplus",
+    clipboard = 'unnamedplus',
 
     -- Use 2 spaces instead of a Tab
     tabstop = 2,
@@ -13,8 +13,8 @@ local Options = {
     shiftwidth = 2,
 
     -- Foldable with tree-sitter
-    foldmethod = "expr",
-    foldexpr = "nvim_treesitter#foldexpr()",
+    foldmethod = 'expr',
+    foldexpr = 'nvim_treesitter#foldexpr()',
     foldenable = false,
 
     hlsearch = true, -- highlight all matches on previous search pattern
