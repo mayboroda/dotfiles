@@ -1,5 +1,5 @@
 vim.pack.add({
-  'https://github.com/lukas-reineke/headlines.nvim',
+  'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
 
-require('headlines').setup()
+require('render-markdown').setup()

@@ -13,10 +13,6 @@
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
-    "headlines.nvim": {
-      "rev": "bf17c96a836ea27c0a7a2650ba385a7783ed322e",
-      "src": "https://github.com/lukas-reineke/headlines.nvim"
-    },
     "intellij_light.nvim": {
       "rev": "925a4bf7960c336989787805229567f3d2539c75",
       "src": "https://github.com/gilbertfrancois/intellij_light.nvim"
@@ -52,6 +48,10 @@
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "54d4b5431e9634ee3d8d30784e017239b5b89d41",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
