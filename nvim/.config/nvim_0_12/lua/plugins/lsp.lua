@@ -19,6 +19,16 @@ require('blink.cmp').setup({
   signature = { enabled = true },
 })
 
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client ~= nil and client:supports_method('textDocument/foldingRange') then
+      local win = vim.api.nvim_get_current_win()
+      vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
+    end
+  end,
+})
+
 -- Languages
 -- TODO: Better structure for LSP ~/.config/nvim/lsp/lua_ls.lua
 -- Lua
