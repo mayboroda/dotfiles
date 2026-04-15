@@ -14,8 +14,9 @@ local Options = {
 
     -- Foldable with tree-sitter
     foldmethod = 'expr',
-    foldexpr = 'nvim_treesitter#foldexpr()',
-    foldenable = false,
+    foldexpr = 'v:lua.vim.treesitter.foldexpr()',
+    foldlevel = 99, -- need this to fold only current part under cursor
+    foldenable = true,
 
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
@@ -64,6 +65,11 @@ function ApplyAllOptions()
     vim.opt.wildoptions:append { 'fuzzy' }
     -- Search recursively in all subdirectories when using file-finding commands.
     vim.opt.path:append { '**' }
+
+    -- setup my spell dictionary
+    vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+    -- spell comments in code
+    vim.opt.spelloptions:append("noplainbuffer")
 end
 
 ApplyAllOptions()
