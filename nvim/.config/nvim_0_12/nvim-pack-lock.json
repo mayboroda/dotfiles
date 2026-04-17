@@ -17,6 +17,10 @@
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "himalaya-vim": {
+      "rev": "978f2b463c4ece28f5e1457029d399638e439704",
+      "src": "https://github.com/pimalaya/himalaya-vim"
+    },
     "intellij_light.nvim": {
       "rev": "925a4bf7960c336989787805229567f3d2539c75",
       "src": "https://github.com/gilbertfrancois/intellij_light.nvim"
