@@ -6,10 +6,8 @@
 default = true
 
 # The client credentials
-#
-client-id = ""
-client-secret.raw = ""
-#client-secret.command = "pass show example"
+client-id = "638381403946-80ft44hhqlknfsng6d8uk57l2ojb6ftj.apps.googleusercontent.com"
+client-secret.command = "mimosa password show google"
 
 # Endpoints, given by your OAuth provider.
 #
@@ -32,37 +30,11 @@ scopes = [
 #tls = "rustls-ring"
 
 # Enables Proof Key for Code Exchange (rfc7636)
-#
 pkce = true
 
-# Automatically refreshes expired access token when using `ortie token
-# show` command.
-#
+# Automatically refreshes expired access token when using `ortie token show` command.
 auto-refresh = true
 
 # Token storage
-#
-# You need 2 different commands: one that reads your token, and one
-# that writes freshly issued or refreshed tokens. Mimosa is a good
-# candidate, but you can use whatever CLI matching your needs:
-#
-storage.read.command = ["pass", "show", "ortie-google"]
-storage.write.command = ["pass", "insert", "-m", "-f", "ortie-google"]
-
-# Hooks
-#
-#hooks.on-issue.success.command = []
-#hooks.on-issue.success.notify.summary = "Ortie"
-#hooks.on-issue.success.notify.body = "Issued access token (expires in $EXPIRES_IN)"
-#
-#hooks.on-issue.error.command = []
-#hooks.on-issue.error.notify.summary = "Ortie"
-#hooks.on-issue.error.notify.body = "[$ERROR] Issue access token error\n$ERROR_DESCRIPTION"
-#
-#hooks.on-refresh.success.command = []
-#hooks.on-refresh.success.notify.summary = "Ortie"
-#hooks.on-refresh.success.notify.body = "Refreshed access token (expires in $EXPIRES_IN)"
-#
-#hooks.on-refresh.error.command = []
-#hooks.on-refresh.error.notify.summary = "Ortie"
-#hooks.on-refresh.error.notify.body = "[$ERROR] Refresh access token error\n$ERROR_DESCRIPTION"
+storage.read.command = ["mimosa", "password", "show", "google-access-token"]
+storage.write.command = ["mimosa", "password", "write", "google-access-token"]
