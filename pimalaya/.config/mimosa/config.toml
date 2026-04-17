@@ -1,0 +1,10 @@
+[stores.google]
+store = "apple-native"
+apple-native.service = "google-cloud"
+apple-native.user = "mayboroda.de@gmail.com"
+
+[stores.gmail-token]
+store = "apple-native"
+apple-native.service = "personal-gmail-token"
+apple-native.user = "mayboroda.de@gmail.com"
+

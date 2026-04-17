@@ -30,7 +30,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Languages
+-- Global LSP settings (applied to all servers)
+local capabilities = require('blink.cmp').get_lsp_capabilities()
+vim.lsp.config('*', {
+  capabilities = capabilities,
+})
+
 -- TODO: Better structure for LSP ~/.config/nvim/lsp/lua_ls.lua
+
 -- Lua
 vim.lsp.config('lua_ls', {
   settings = {
@@ -45,6 +52,25 @@ vim.lsp.config('lua_ls', {
   },
 })
 vim.lsp.enable('lua_ls')
+
 -- Markdown PKM (Personal Knoledge Management)
 vim.lsp.enable('markdown_oxide')
 
+-- Type-Script
+vim.lsp.enable('ts_ls')
+
+-- Rust
+vim.lsp.config('rust_analyzer', {
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = true,
+      check = {
+        command = "clippy", -- run `cargo clippy` instead of plain `check`
+      },
+    },
+  },
+})
+vim.lsp.enable('rust_analyzer')

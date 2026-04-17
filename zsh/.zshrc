@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof
 # source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 # Setup brew
@@ -23,4 +23,4 @@ export PATH="/Users/dmytromay/.rd/bin:$PATH"
 
 source "$HOME/.bazelenv"
 
-zprof
+#zprof
