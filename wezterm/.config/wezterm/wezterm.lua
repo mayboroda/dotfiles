@@ -25,6 +25,11 @@ config = {
     {key="LeftArrow", mods="OPT", action=wezterm.action{SendString="\x1bb"}},
     -- Make Option-Right equivalent to Alt-f; forward-word
     {key="RightArrow", mods="OPT", action=wezterm.action{SendString="\x1bf"}},
+
+    -- Disable the CTRL versions in favour of nvim tab navigation
+    { key = "PageUp", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
+    { key = "PageDown", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
+
   }
 }
 

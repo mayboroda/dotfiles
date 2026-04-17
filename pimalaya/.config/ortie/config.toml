@@ -1,0 +1,68 @@
+[accounts.google]
+
+# Make this current account the default one to use when no account is
+# specified in the CLI with the --account argument.
+#
+default = true
+
+# The client credentials
+#
+client-id = ""
+client-secret.raw = ""
+#client-secret.command = "pass show example"
+
+# Endpoints, given by your OAuth provider.
+#
+endpoints.authorization = "https://accounts.google.com/o/oauth2/auth?access_type=offline"
+endpoints.token = "https://www.googleapis.com/oauth2/v3/token"
+#endpoints.redirection = "http://localhost"
+
+# Access token scopes
+#
+scopes = [
+  "https://www.googleapis.com/auth/gmail.modify",
+  "https://www.googleapis.com/auth/calendar.events",
+  "https://www.googleapis.com/auth/drive.readonly"
+  ]
+
+# TLS configuration
+#
+#tls = "native-tls"
+#tls = "rustls-aws"
+#tls = "rustls-ring"
+
+# Enables Proof Key for Code Exchange (rfc7636)
+#
+pkce = true
+
+# Automatically refreshes expired access token when using `ortie token
+# show` command.
+#
+auto-refresh = true
+
+# Token storage
+#
+# You need 2 different commands: one that reads your token, and one
+# that writes freshly issued or refreshed tokens. Mimosa is a good
+# candidate, but you can use whatever CLI matching your needs:
+#
+storage.read.command = ["pass", "show", "ortie-google"]
+storage.write.command = ["pass", "insert", "-m", "-f", "ortie-google"]
+
+# Hooks
+#
+#hooks.on-issue.success.command = []
+#hooks.on-issue.success.notify.summary = "Ortie"
+#hooks.on-issue.success.notify.body = "Issued access token (expires in $EXPIRES_IN)"
+#
+#hooks.on-issue.error.command = []
+#hooks.on-issue.error.notify.summary = "Ortie"
+#hooks.on-issue.error.notify.body = "[$ERROR] Issue access token error\n$ERROR_DESCRIPTION"
+#
+#hooks.on-refresh.success.command = []
+#hooks.on-refresh.success.notify.summary = "Ortie"
+#hooks.on-refresh.success.notify.body = "Refreshed access token (expires in $EXPIRES_IN)"
+#
+#hooks.on-refresh.error.command = []
+#hooks.on-refresh.error.notify.summary = "Ortie"
+#hooks.on-refresh.error.notify.body = "[$ERROR] Refresh access token error\n$ERROR_DESCRIPTION"

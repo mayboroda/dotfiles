@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 # source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 # Setup brew
@@ -19,3 +20,7 @@ setopt nocaseglob;
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/dmytromay/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+source "$HOME/.bazelenv"
+
+#zprof

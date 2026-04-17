@@ -1,0 +1,7 @@
+require('plugins.nvim')
+require('plugins.oil')
+require('plugins.colors')
+require('plugins.whichkey')
+require('plugins.lsp')
+require('plugins.text')
+require('plugins.experiments')

@@ -1,11 +1,10 @@
 -- After we set all the plugins we need to set default or initial values for nvim
 
-
 local Options = {
     number = true,
     relativenumber = true,
 
-    clipboard = "unnamedplus",
+    clipboard = 'unnamedplus',
 
     -- Use 2 spaces instead of a Tab
     tabstop = 2,
@@ -14,9 +13,10 @@ local Options = {
     shiftwidth = 2,
 
     -- Foldable with tree-sitter
-    foldmethod = "expr",
-    foldexpr = "nvim_treesitter#foldexpr()",
-    foldenable = false,
+    foldmethod = 'expr',
+    foldexpr = 'v:lua.vim.treesitter.foldexpr()',
+    foldlevel = 99, -- need this to fold only current part under cursor
+    foldenable = true,
 
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
@@ -47,6 +47,11 @@ local Options = {
       ' %l:%c',      -- line:column
       ' %P',         -- percentage through file (Top / 45% / Bot)
     }),
+    smoothscroll = true,
+    confirm = true,
+
+    -- Replaces Vim’s default grep with ripgrep (rg)
+    grepprg = 'rg --vimgrep --no-messages --smart-case',
 }
 
 function ApplyAllOptions()
@@ -54,18 +59,18 @@ function ApplyAllOptions()
 	    vim.api.nvim_set_option_value(k, v, {})
     end
 
-    -- netrw plugin for Explorer
-    vim.g.netrw_liststyle = 3 -- tree style listing
-    vim.g.netrw_sizestyle = 'H' -- human-readable (ex. 5K, 4M, 3G)
-    vim.g.netrw_banner = 0
-    vim.g.netrw_hide = 0 -- show hidden files
-    vim.g.netrw_winsize = 80 -- initial size of the new Ex window in percentage
+    -- Extra appends
+    -- Enables fuzzy matching for command-line completion (:e, :find, :cd, etc.)
+    -- For example :e sufi => :e src/utils/file.lua
+    vim.opt.wildoptions:append { 'fuzzy' }
+    -- Search recursively in all subdirectories when using file-finding commands.
+    vim.opt.path:append { '**' }
 
+    -- setup my spell dictionary
+    vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+    -- spell comments in code
+    vim.opt.spelloptions:append("noplainbuffer")
 end
 
 ApplyAllOptions()
-
-
-
-
 
