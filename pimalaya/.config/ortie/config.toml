@@ -20,7 +20,7 @@ endpoints.token = "https://www.googleapis.com/oauth2/v3/token"
 scopes = [
   "https://www.googleapis.com/auth/gmail.modify",
   "https://www.googleapis.com/auth/calendar.events",
-  "https://www.googleapis.com/auth/drive.readonly"
+  "https://www.googleapis.com/auth/drive"
   ]
 
 # TLS configuration

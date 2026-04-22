@@ -29,8 +29,10 @@ config = {
     -- Disable the CTRL versions in favour of nvim tab navigation
     { key = "PageUp", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
     { key = "PageDown", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
-
-  }
+  },
+  -- On macOS, Option (Alt) can behave like a special character input instead of Meta.
+  send_composed_key_when_left_alt_is_pressed = false,
+  send_composed_key_when_right_alt_is_pressed = false,
 }
 
 return config

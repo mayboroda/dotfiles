@@ -13,9 +13,4 @@ vim.keymap.set('v', '<', '<gv')
 -- Buffer navigation
 vim.keymap.set('n', '<Tab>', ':bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>')
-vim.keymap.set('n', '<C-l>', ':tabnext<CR>')
-vim.keymap.set('n', '<C-h>', ':tabprevious<CR>')
 
-
--- To normal mode in Terminal
-vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', { noremap = true, silent = true })
