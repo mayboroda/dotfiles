@@ -8,7 +8,7 @@ require('render-markdown').setup({
   yaml = { enabled = false },
 })
 
-vim.keymap.set("n", "<leader>bw", function()
+vim.keymap.set("n", "<leader>sw", function()
   local wrap = not vim.wo.wrap
   vim.opt_local.wrap = wrap
   vim.opt_local.linebreak = wrap

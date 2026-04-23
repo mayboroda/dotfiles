@@ -37,6 +37,10 @@
       "rev": "e0601f75aa5137a5a13bb92a988c9a300f5bd3de",
       "src": "https://github.com/nvim-mini/mini.indentscope"
     },
+    "mini.pick": {
+      "rev": "437d44eb57312f23e6b931704694fc294922cd88",
+      "src": "https://github.com/nvim-mini/mini.pick"
+    },
     "mini.statusline": {
       "rev": "b456bfe845e475e9cec065b7a9a1ef657ad2f41b",
       "src": "https://github.com/nvim-mini/mini.statusline"
