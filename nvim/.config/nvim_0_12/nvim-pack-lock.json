@@ -41,6 +41,10 @@
       "rev": "437d44eb57312f23e6b931704694fc294922cd88",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
+    "mini.sessions": {
+      "rev": "c96a1d1284b37ba2431092981a9d58f8c71a4fc3",
+      "src": "https://github.com/nvim-mini/mini.sessions"
+    },
     "mini.statusline": {
       "rev": "b456bfe845e475e9cec065b7a9a1ef657ad2f41b",
       "src": "https://github.com/nvim-mini/mini.statusline"

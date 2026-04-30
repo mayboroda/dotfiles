@@ -7,3 +7,22 @@ raycast
 # nix build result
 result
 
+# Ignore everything in Pi config dir...
+pi/.pi/agent/*
+
+# ...then explicitly keep only hand-written config
+!pi/.pi/agent/keybindings.json
+!pi/.pi/agent/settings.json
+!pi/.pi/agent/models.json
+!pi/.pi/agent/AGENTS.md
+!pi/.pi/agent/SYSTEM.md
+!pi/.pi/agent/APPEND_SYSTEM.md
+!pi/.pi/agent/prompts/
+!pi/.pi/agent/prompts/**
+!pi/.pi/agent/skills/
+!pi/.pi/agent/skills/**
+!pi/.pi/agent/extensions/
+!pi/.pi/agent/extensions/**
+!pi/.pi/agent/themes/
+!pi/.pi/agent/themes/**
+
