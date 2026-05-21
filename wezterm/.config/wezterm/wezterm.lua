@@ -1,11 +1,13 @@
 local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
+local act = wezterm.action
 
 config = {
 	automatically_reload_config = true,
-	enable_tab_bar = false,
 	window_close_confirmation = "NeverPrompt",
+	enable_tab_bar = true,
+  use_fancy_tab_bar = false,
 	window_decorations = "RESIZE",
   color_scheme = "rose-pine-moon",
   colors = {
@@ -30,6 +32,9 @@ config = {
     -- Disable the CTRL versions in favour of nvim tab navigation
     { key = "PageUp", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
     { key = "PageDown", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
+
+    { key = 'p', mods = 'CTRL|SHIFT', action = act.ShowLauncher },
+    { key = 'w', mods = 'CTRL|SHIFT', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
   },
   -- On macOS, Option (Alt) can behave like a special character input instead of Meta.
   send_composed_key_when_left_alt_is_pressed = false,
