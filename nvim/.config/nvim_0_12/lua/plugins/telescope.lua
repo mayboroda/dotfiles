@@ -40,5 +40,5 @@ require('telescope').setup({
   }
 })
 
-vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>', {desc = 'List buffers'})
-vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>', {desc = 'Find files'})
+-- vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>', {desc = 'List buffers'})
+-- vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>', {desc = 'Find files'})
