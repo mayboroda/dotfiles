@@ -35,6 +35,18 @@ config = {
 
     { key = 'p', mods = 'CTRL|SHIFT', action = act.ShowLauncher },
     { key = 'w', mods = 'CTRL|SHIFT', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
+    {
+      key = 'E',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.PromptInputLine {
+        description = 'Rename tab',
+        action = wezterm.action_callback(function(window, pane, line)
+          if line then
+            window:active_tab():set_title(line)
+          end
+        end),
+      },
+    }
   },
   -- On macOS, Option (Alt) can behave like a special character input instead of Meta.
   send_composed_key_when_left_alt_is_pressed = false,
