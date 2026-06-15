@@ -16,3 +16,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use nvim to read man pages
 export MANPAGER='nvim +Man!'
 
+# Editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
