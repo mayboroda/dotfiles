@@ -1,5 +1,9 @@
 vim.pack.add({
-  {src='https://github.com/saghen/blink.cmp', version = 'v1'},
+  {
+    src='https://github.com/saghen/blink.cmp',
+    version = 'v1',
+    build = "cargo build --release",
+  },
   'https://github.com/rafamadriz/friendly-snippets',
   'https://github.com/nvim-mini/mini.indentscope',
   'https://github.com/neovim/nvim-lspconfig',
