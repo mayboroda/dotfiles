@@ -2,7 +2,7 @@ vim.pack.add({
   {
     src='https://github.com/saghen/blink.cmp',
     version = 'v1',
-    build = "cargo build --release",
+    build = "cargo build --release", -- this does nothing, but `:BlinkCmp build` will fix the issue.
   },
   'https://github.com/rafamadriz/friendly-snippets',
   'https://github.com/nvim-mini/mini.indentscope',
