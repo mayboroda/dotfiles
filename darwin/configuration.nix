@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
-let 
-  username = "dmytromay"; 
-in {
+let
+  username = "dmytromay";
+in
+{
   # Required
   system.stateVersion = 4;
   system.primaryUser = "dmytromay";
