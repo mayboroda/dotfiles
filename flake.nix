@@ -32,7 +32,7 @@
         };
         modules = [
           ./darwin/configuration.nix
-          ./darwin/home.nix
+          ./darwin/home-manager.nix
         ];
       };
     };
