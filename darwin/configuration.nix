@@ -1,7 +1,4 @@
-{ ... }:
-let
-  username = "dmytromay";
-in
+{ username, homeDirectory, ... }:
 {
   imports = [
     ./system.nix
@@ -19,7 +16,7 @@ in
   system.stateVersion = 4;
   system.primaryUser = username;
   users.users.${username} = {
-    home = "/Users/${username}";
+    home = "${homeDirectory}";
   };
 
   # Verify the actual GID
