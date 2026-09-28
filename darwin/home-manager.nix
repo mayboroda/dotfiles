@@ -1,4 +1,9 @@
-{ home-manager, username, homeDirectory, ... }:
+{
+  home-manager,
+  username,
+  homeDirectory,
+  ...
+}:
 
 {
   imports = [
