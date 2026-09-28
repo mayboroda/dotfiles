@@ -6,7 +6,7 @@
       EDITOR = "nvim";
     };
 
-    # System-wide essentials only. Personal CLI tools should move to Home Manager later.
+    # System-wide essentials only.
     systemPackages = with pkgs; [
       git
       vim
