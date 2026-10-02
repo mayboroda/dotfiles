@@ -1,9 +1,9 @@
-{ ... }:
+{ username, ... }:
 
 {
   # Later:
-  # homebrew.casks = [ "wezterm" ];
-  # home-manager.users.dmytromay = { ... }: {
+  # homebrew.casks = [ "wezterm@nightly" ];
+  # home-manager.users.${username} = { ... }: {
   #   xdg.configFile."wezterm".source = ../../wezterm/.config/wezterm;
   # };
 }
