@@ -111,6 +111,6 @@ PROMPT+="$(prompt_git ${violet} ${blue})"; # Git repository details
 PROMPT+="${yellow}→ ${reset}"; # `$` (and reset color)
 export PROMPT;
 
-RPROMPT="${yello}%*";
+RPROMPT="${yellow}%*";
 export RPROMPT;
 

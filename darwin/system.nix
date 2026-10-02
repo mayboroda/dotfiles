@@ -115,6 +115,24 @@
       wvous-tr-corner = 1;
       wvous-bl-corner = 1;
       wvous-br-corner = 1;
+
+      persistent-apps = [
+        "/System/Applications/Notes.app"
+        "/System/Applications/Reminders.app"
+        "/System/Applications/Clock.app"
+        "/Applications/Bitwarden.app"
+        { spacer = { small = false; }; }
+        "/Applications/Glide.app"
+        "/Applications/WezTerm.app"
+        "/Applications/IntelliJ IDEA CE.app"
+        "/Applications/Zed.app"
+        "/Applications/Slack.app"
+        { spacer = { small = false; }; }
+        "/System/Applications/Messages.app"
+        "/Applications/Telegram.app"
+        "/Applications/WhatsApp.app"
+
+      ];
     };
 
     # DesktopServices (.DS_Store)
