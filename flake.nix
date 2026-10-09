@@ -10,6 +10,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
@@ -27,6 +28,7 @@
       darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
+          inherit inputs;
           home-manager = inputs.home-manager;
           username = "dmytromay";
           homeDirectory = "/Users/dmytromay";

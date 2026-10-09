@@ -10,6 +10,7 @@
     ./programs/wezterm.nix
     ./programs/mise.nix
     ./programs/direnv.nix
+    ./modules/llm-agents.nix
   ];
 
   # Required

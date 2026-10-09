@@ -11,9 +11,10 @@
       git
       vim
       curl
+      jujutsu
       ammonite # Homebrew: ammonite-repl
       asciidoctor
-      asdf
+      asdf # TODO: need to remove it
       autoconf-archive
       automake
       bash
