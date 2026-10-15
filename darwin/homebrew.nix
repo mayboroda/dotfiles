@@ -31,6 +31,7 @@
       "todoist-app"
       "wezterm@nightly"
       "zettlr"
+      "balenaetcher"
     ];
   };
 }
